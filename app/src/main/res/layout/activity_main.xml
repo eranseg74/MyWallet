@@ -6,14 +6,289 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txt"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textStyle="italic"
+                android:textSize="28sp"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:text="@string/title" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="60dp"
+                android:layout_height="80dp"
+                android:elevation="12dp"
+                android:id="@+id/picView"
+                app:cardCornerRadius="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="10dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/uFace"
+                    android:scaleType="centerCrop"/>
+            </androidx.cardview.widget.CardView>
 
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1.3">
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/creditCard_image"
+                app:srcCompat="@drawable/mascardblue"/>
+
+            <TextView
+                android:id="@+id/txtBalance"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignStart="@id/imageView"
+                android:layout_alignTop="@id/imageView"
+                android:layout_alignEnd="@id/imageView"
+                android:layout_alignBottom="@id/imageView"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="90dp"
+                android:gravity="start"
+                android:text="@string/balance"
+                android:textColor="#FFF"
+                android:textSize="30sp"
+                android:textStyle="italic" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="#FF0000"
+            android:text="@string/baseCurrency" />
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                card_view:cardBackgroundColor="#EEE4E4"
+                card_view:cardCornerRadius="5dp"
+                card_view:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/coinNameLayout"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/baseCountryFlag"
+                        android:layout_width="400dp"
+                        android:layout_height="60dp"
+                        android:layout_weight="2"
+                        android:gravity="start"
+                        card_view:srcCompat="@drawable/visacardblack" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.9"
+                        android:gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/baseCoinAcronym"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="bottom"
+                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:text="TextView" />
+
+                        <TextView
+                            android:id="@+id/baseCoinFullName"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:singleLine="true"
+                            android:text="TextView" />
+                    </LinearLayout>
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:paddingEnd="10dp">
+                        <TextView
+                            android:id="@+id/baseCoinValToBase"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="@string/defText" />
+                        <ImageView
+                            android:id="@+id/baseCoinFormat"
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_height="12sp"
+                            android:layout_toEndOf="@+id/baseCoinValToBase"
+                            android:src="@drawable/usd"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/rateList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="#FF0000"
+            android:text="@string/rateList" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/currencies"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:scrollbars="vertical" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:importantForAutofill="yes"
+            android:layout_weight="1.5"
+            android:layout_marginBottom="10dp">
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:id="@+id/depositLayout">
+                <TextView
+                    android:id="@+id/btnDeposit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    android:background="#7C84B1"
+                    android:text="@string/deposit"/>
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/btnDeposit"
+                    android:layout_alignTop="@+id/btnDeposit"
+                    android:layout_alignEnd="@id/btnDeposit"
+                    android:layout_alignBottom="@+id/btnDeposit"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/deposit"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:id="@+id/withdrawLayout"
+                android:layout_toEndOf="@id/depositLayout">
+                <TextView
+                    android:id="@+id/btnWithdraw"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    android:background="#7C84B1"
+                    android:text="@string/withdraw" />
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/btnWithdraw"
+                    android:layout_alignTop="@+id/btnWithdraw"
+                    android:layout_alignEnd="@id/btnWithdraw"
+                    android:layout_alignBottom="@+id/btnWithdraw"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/withdraw"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:id="@+id/sendLayout"
+                android:layout_toEndOf="@id/withdrawLayout">
+                <TextView
+                    android:id="@+id/btnSend"
+                    android:layout_width="match_parent"
+                    android:gravity="center_horizontal"
+                    android:layout_height="match_parent"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    android:background="#7C84B1"
+                    android:text="@string/send_money" />
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/btnSend"
+                    android:layout_alignTop="@+id/btnSend"
+                    android:layout_alignEnd="@id/btnSend"
+                    android:layout_alignBottom="@+id/btnSend"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/send"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/claimLayout"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@id/sendLayout">
+                <TextView
+                    android:id="@+id/btnClaim"
+                    android:layout_width="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    android:layout_height="match_parent"
+                    android:background="#7C84B1"
+                    android:text="@string/claim_money" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/btnClaim"
+                    android:layout_alignTop="@+id/btnClaim"
+                    android:layout_alignEnd="@id/btnClaim"
+                    android:layout_alignBottom="@+id/btnClaim"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/claim" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

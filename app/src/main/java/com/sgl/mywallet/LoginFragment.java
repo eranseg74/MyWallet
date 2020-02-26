@@ -54,9 +54,7 @@ public class LoginFragment extends Fragment {
                     @Override
                     public void handleResponse(BackendlessUser response) {
                         Toast.makeText(context, "Logged in Successfully", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(context, MainActivity.class);
-                        intent.putExtra("str", "Hi, " + response.getProperty("name"));
-                        startActivity(intent);
+                        goToMainActivity(response);
                     }
 
                     @Override
@@ -67,6 +65,16 @@ public class LoginFragment extends Fragment {
             }
         });
         return v;
+    }
+
+    private void goToMainActivity(BackendlessUser user) {
+        String accountId = String.valueOf(user.getProperty("accountId"));
+        //Backendless.Data.of(Accounts.class).
+        Intent intent = new Intent(context, MainActivity.class);
+        intent.putExtra("str", "Hi, " + user.getProperty("name"));
+        intent.putExtra("imageFileName", user.getProperty("image").toString());
+        intent.putExtra("accountId", accountId);
+        startActivity(intent);
     }
 
 

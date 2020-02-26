@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".RegisterFragment">
 
@@ -17,7 +17,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginBottom="5dp"
         android:fontFamily="@font/indigo_daisy"
-        android:layout_marginTop="60dp"/>
+        android:layout_marginTop="40dp"/>
 
     <TextView
         android:id="@+id/tv_subtitle"
@@ -27,12 +27,12 @@
         android:textSize="17sp"
         android:fontFamily="@font/roboto_regular"
         android:layout_marginStart="25dp"
-        android:layout_marginBottom="50dp"/>
+        android:layout_marginBottom="20dp"/>
 
     <EditText
         android:id="@+id/et_name"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="48dp"
         android:hint="@string/your_name"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -41,12 +41,13 @@
         android:inputType="textPersonName"
         android:fontFamily="@font/roboto_regular"
         android:background="@drawable/et_custom"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/et_email"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="48dp"
         android:hint="@string/e_mail"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -55,12 +56,13 @@
         android:fontFamily="@font/roboto_regular"
         android:inputType="textEmailAddress"
         android:background="@drawable/et_custom"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/et_password"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="48dp"
         android:hint="@string/password"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -69,20 +71,86 @@
         android:fontFamily="@font/roboto_regular"
         android:inputType="textPassword"
         android:background="@drawable/et_custom"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/et_repassword"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="48dp"
         android:hint="@string/re_type_password"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
         android:padding="15dp"
         android:fontFamily="@font/roboto_regular"
         android:inputType="textPassword"
         android:background="@drawable/et_custom"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:autofillHints="" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="15dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/choose_account_type"
+            android:background="@drawable/et_custom"
+            android:textSize="15sp"
+            android:autofillHints=""
+            />
+        <Spinner
+            android:id="@+id/sp_account_type"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:prompt="@string/account_type_prompt"
+            android:entries="@array/account_types"
+            android:background="@drawable/et_custom"
+            android:padding="15dp" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/camLogo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="100dp"
+            android:contentDescription="@string/camera_logo"
+            android:src="@drawable/camera" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/picView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:elevation="12dp"
+            app:cardCornerRadius="50dp">
+
+            <ImageView
+                android:id="@+id/facePic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/face_image"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -99,15 +167,17 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="30dp"
             android:layout_centerInParent="true"
+            android:layout_alignParentTop="true"
             android:textColor="@android:color/white"
             android:text="@string/register"/>
 
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_arrow_left"
             android:layout_above="@id/swipeLeft"
-            android:layout_centerHorizontal="true"/>
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/arrow"
+            android:src="@drawable/ic_arrow_left" />
 
         <TextView
             android:id="@+id/swipeLeft"

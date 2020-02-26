@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Login App</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="swipe_left_for_register">Swipe Left for Register</string>
     <string name="login">Login</string>
@@ -13,4 +12,31 @@
     <string name="re_type_password">Re-type Password</string>
     <string name="your_name">Full Name</string>
     <string name="todo">TODO</string>
+    <string name="title">Your balance</string>
+    <string name="baseCurrency">Base Currency</string>
+    <string name="usa">USD</string>
+    <string name="balance">$ 123</string>
+    <string name="creditCard_image">CCImage</string>
+    <string name="deposit">Deposit</string>
+    <string name="withdraw">Withdraw</string>
+    <string name="send_money">Send</string>
+    <string name="claim_money">Claim</string>
+    <string name="rateList">Currencies Rates</string>
+    <string name="sourceVal">1.00</string>
+    <string name="defText">TextView</string>
+    <string name="account_owners_list">Account Owners List</string>
+    <string name="et_account_type">Account Type</string>
+    <string name="camera_logo">camera logo</string>
+    <string name="face_image">face image</string>
+    <string name="arrow">arrow</string>
+
+    <string name="account_type_prompt">Choose account type</string>
+    <string name="choose_account_type">Choose account type</string>
+
+    <string-array name="account_types">
+        <item></item>
+        <item>Regular</item>
+        <item>Preferred</item>
+        <item>Business</item>
+    </string-array>
 </resources>

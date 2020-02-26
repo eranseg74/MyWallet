@@ -1,6 +1,7 @@
 package com.sgl.mywallet;
 
 class Defaults {
-    static final String APPLICATION_ID = "644E29B8-6584-ADE2-FF90-B401C64BFC00";
-    static final String API_KEY = "87387813-E21B-4CD8-B4C5-0F009BD14BB8";
+    static final String APPLICATION_ID = "BB0D06ED-41A5-856A-FF24-45C839707100";
+    static final String API_KEY = "2A3602BE-CA04-4FAF-84D5-0E97758E2B32";
+    static final String CURRENCYLAYER_API_KEY = "8c90d93ec5434efe23972196dbc348db";
 }
